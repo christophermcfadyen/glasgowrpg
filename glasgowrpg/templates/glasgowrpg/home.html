@@ -7,18 +7,18 @@
 {% endblock %}
 
 {% block body_block %}
-    <h1>Welcome to Glasgow Rpg</h1>
+
+    <h1>Welcome to Glasgow RPG</h1>
     
+	<div>
     {% if user.is_authenticated %}
         Greetings {{ user.username }}!
-    {% else %}
-        An exciting journey awaits you!
-    {% endif %}
-
 		
-    <h2>
-    </h2>
-        
+    {% else %}
+        An exciting journey awaits you, create your free account to start playing now !
+	
+	</div>
+	      
 
 {% endblock %}
 
