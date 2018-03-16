@@ -7,7 +7,7 @@ from django.contrib.auth import logout
 from datetime import datetime
 
 
-def index(request):
+def home(request):
     
     
     context_dict = {}
