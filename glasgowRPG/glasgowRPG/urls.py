@@ -16,16 +16,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
-from rango import views
+from rpg import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^rango/', include('rango.urls')),
+    url(r'^$', views.home, name='home'),
+    url(r'^rpg/', include('rpg.urls')),
     # above maps any URLs starting
     # with rango/ to be handled by
     # the rango application
     url(r'^admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,10 +1,10 @@
 from django.conf.urls import url
-from rango import views
+from rpg import views
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.index, name='home'),
     url(r'about/$', views.about, name='about'),]
 
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.index, name='home'),
     url(r'about/$', views.about, name='about'),]
