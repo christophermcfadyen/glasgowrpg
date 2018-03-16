@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!--{% load staticfiles %}-->
-<!--to be added later {% load rpg_template_tags %}-->
+
+{% load staticfiles %}
+
 
 <html>
         <head lang ="en">
@@ -23,9 +24,8 @@
 		
 		<div id = "taskbar"> <!--taskbar which appears at the top of every page-->
 			<ul>
-			<li><a href="{% url 'index' %}">Index</a></li>
 			<li><a href="{% url 'home' %}">Home</a></li>
-			<li><a href="{% url 'About' %}">About</a></li>
+			<li><a href="{% url 'about' %}">About</a></li>
 			<li><a href="{% url 'help' %}">Help</a></li>
 			
 			{% if user.is_authenticated %}
@@ -37,6 +37,8 @@
 			{% else %}
                 <li><a href="{% url 'login' %}">Sign In</a></li>
                 <li><a href="{% url 'register' %}">Sign Up</a></li>
+                
+            {% endif %}
             </ul>
 		</div>
 		
