@@ -17,9 +17,27 @@ def home(request):
 
 def about(request):
 
-    context_dict =  {'boldmessage': "Chris"}
+    context_dict =  {'boldmessage': "about"}
     return render(request, 'rpg/about.html', context=context_dict)
     
+def help(request):
+
+    context_dict =  {'boldmessage': "help"}
+    return render(request, 'rpg/help.html', context=context_dict)
+    
+def login(request):
+
+    context_dict =  {'boldmessage': "login"}
+    return render(request, 'rpg/login.html', context=context_dict)
+    
+def register(request):
+
+    context_dict =  {'boldmessage': "register"}
+    return render(request, 'rpg/register.html', context=context_dict)
+    
+def play(request):
+    context_dict = {'boldmessage': "play"}
+    return render(request, 'rpg/play.html', context=context_dict)
 
 
 
