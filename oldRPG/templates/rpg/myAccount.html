@@ -1,0 +1,24 @@
+{% extends 'rpg/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    My Account
+{% endblock %}
+
+{% block body_block %} <!-- css added later -->
+	<h1>
+	Here are the details of your account
+	</h1>
+	
+	<p>Email : {{user.email}}</p>
+
+	<p>Username: {{user.username}} </p>
+
+	<p>First day of University: </p> <!-- to include the account creation date, from django date_joined-->
+	
+	<p>Current status bars: </p> <!-- displaying social and academic bars-->
+	
+	
+	
+	<a href="{% url 'home' %}">Return to homepage.</a><br />
+{% endblock %}
