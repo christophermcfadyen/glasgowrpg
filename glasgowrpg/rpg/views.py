@@ -39,5 +39,13 @@ def play(request):
     context_dict = {'boldmessage': "play"}
     return render(request, 'rpg/play.html', context=context_dict)
 
+def stats(request):
+    context_dict = {'boldmessage': "stats"}
+    return render(request, 'rpg/stats.html', context=context_dict)
+    
+def userProfile(request):
+    context_dict = {'boldmessage': "userProfile"}
+    return render(request, 'rpg/userprofile.html', context=context_dict)
+
 
 
