@@ -22,10 +22,10 @@
         
 	<body>
 	
-		<div id = "header1" > 
-			<!--add image -->
+		<!-- <div id = "header1" > 
+			<!--add image REMOVED HEADER AFTER SUCCESSFULL NAV BAR IMPLEMENTATION
 			<h1> Glasgow RPG </h1>
-		</div>
+		</div>-->
 	
 		<!--Navigation bar-->
 		<nav class="navbar navbar-inverse">
@@ -49,14 +49,14 @@
 					
 					{% if user.is_authenticated %}
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="{% url 'stats' %}">Game Statistics</a></li>
-						<li><a href="{% url 'userProfile' %}">My Profile</a></li>
+						<li><a href="{% url 'stats' %}"><span class="glyphicon glyphicon-statsGame"></span>Game Statistics</a></li>
+						<li><a href="{% url 'userProfile' %}"><span class="glyphicon glyphicon-user"></span>My Profile</a></li>
 					</ul>
 
 					{% else %}
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</ul>
 					{% endif %}
 					
