@@ -47,13 +47,13 @@
 						<li><a href="{% url 'play' %}">Play</a></li>
 					</ul>
 					
-					{% if user.is_authenticated %}
+					<!--{% if user.is_authenticated %}-->
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="{% url 'stats' %}"><span class="glyphicon glyphicon-statsGame"></span>Game Statistics</a></li>
 						<li><a href="{% url 'userProfile' %}"><span class="glyphicon glyphicon-user"></span>My Profile</a></li>
 					</ul>
 
-					{% else %}
+					<!--{% else %}-->
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 						<li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
