@@ -1,7 +1,6 @@
 from django.conf.urls import url
 from rpg import views
 
-app_name = "rpg"
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
@@ -11,4 +10,4 @@ urlpatterns = [
     url(r'register/$', views.register, name='register'),
     url(r'play/$', views.play, name='play'),
     url(r'stats/$', views.stats, name='stats'),
-    url(r'userprofile/$', views.userProfile, name='userProfile'),]
+    url(r'userprofile/$', views.userprofile, name='userprofile'),]

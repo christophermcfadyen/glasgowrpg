@@ -7,6 +7,7 @@
 
 {% block body_block %}
 <h1>Login to GlasgowRPG</h1>
+<div style = "margin-left: 40px;">
 <form id="login_form" method="post" action="{% url 'login' %}">
     {% csrf_token %}
     Username: <input type="text" name="username" value="" size="50" />
@@ -15,4 +16,6 @@
     <br />
     <input type="submit" value="submit" />
 </form>
-{% endblock %}
+</div>
+{% endblock %}
+
