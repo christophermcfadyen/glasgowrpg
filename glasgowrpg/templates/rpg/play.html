@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Freshers" startnode="41" creator="Twine" creator-version="2.2.1" ifid="93FBCF19-B72E-4F74-B13E-62A68E47BD32" zoom="0.6" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css?family=VT323');
+<tw-storydata name="Freshers" startnode="39" creator="Twine" creator-version="2.2.1" ifid="93FBCF19-B72E-4F74-B13E-62A68E47BD32" zoom="0.6" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css?family=VT323');
 
 body, tw-story
 {
@@ -84,6 +84,7 @@ tw-include[title="Update Social Bar"] {
     border: 1px black solid;
     background: #369;
 }
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/* Create an unique private namespace to contain custom code. */
 if (!window.GE) {
 	window.GE = {};
@@ -111,6 +112,7 @@ window.GE.updateHeathBar = function (maxAca, academicScore, maxSoc, socialScore)
 	
 
 };
+
 </script><tw-tag name="startup" color="red"></tw-tag>,<tw-tag name="footer" color="orange"></tw-tag>,<tw-tag name="header" color="red"></tw-tag><tw-passagedata pid="1" name="Begin" tags="" position="566,372" size="100,100">Rightly, you have chose to be a Computing Science student but you must now choose another subject to fill your timetable. 
 There are two option which will currently fit your timetable:
 [[Mathematics]] 
@@ -128,9 +130,118 @@ Now your timetable is in order. Did you choose to live at
 (set: $home to true) 
 You are now ready to embrace [[FRESHERS WEEK]]</tw-passagedata><tw-passagedata pid="5" name="Halls" tags="" position="664,719" size="100,100">You have joined the legions of overcharged students and moved to accomidation closely reembling a Serbian prison
 (set: $home to false)
-It is time for [[FRESHERS WEEK]] </tw-passagedata><tw-passagedata pid="6" name="FRESHERS WEEK" tags="" position="561,894" size="100,100">&lt;!-- Display (call) the Typewriter passage --&gt;
+It is time for [[FRESHERS WEEK]] </tw-passagedata><tw-passagedata pid="6" name="FRESHERS WEEK" tags="" position="561,894" size="100,100">
 (set: $typewriterText to &quot;You now begin the gauntlet that is FRESHERS WEEK&quot;)
-{
+(display: &quot;Typewriter&quot;)
+(live: 4s)[
+(if: $home is true) [
+	(go-to: &quot;Home - Day 1&quot;)]
+	(else:)[(go-to: &quot;Halls - Day 1&quot;)
+]]
+
+
+</tw-passagedata><tw-passagedata pid="7" name="Home - Day 1" tags="" position="1032,50" size="100,100">Day 1:
+
+The QMU is holding an event with a hypnotic dog. You have been assured this will be a once in a lifetime event.
+[[Hypnotic Dog]]
+[[Stay home and read your course handbook]]</tw-passagedata><tw-passagedata pid="8" name="Hypnotic Dog" tags="" position="1149,226" size="100,100">Just your luck, you were called up on stage. You do not recall what happened but you now begin to salivate whenever you see dog biscuits. This has not helped you make new friends. (set: $socialScore to it - 5 )
+[[Day 2 -&gt; Home - Day 2]]</tw-passagedata><tw-passagedata pid="9" name="Stay home and read your course handbook" tags="" position="942,223" size="100,100">You&#39;ve learned there&#39;s a requirement to attend 75% of Python labs.
+(set: $academicScore to it + 5)
+
+[[Day 2 -&gt; Home - Day 2]]</tw-passagedata><tw-passagedata pid="10" name="Halls - Day 1" tags="" position="1596,5" size="100,100">Day 1:
+Your new flat mates are all as young and fresh faced as you. Tonight they are having a party. What is your drink of choice?
+[[Tennent&#39;s]]
+[[Vodka]]
+[[Absinthe]]
+[[Water]]
+</tw-passagedata><tw-passagedata pid="11" name=" Home - Day 2" tags="" position="1052,390" size="100,100">Day 2: 
+Tomorrow you will be given your first ever university lecture, a one hour CS induction. But tonight you&#39;ve decided to go out with friends.
+[[Shots?]]
+[[Diet coke please]]</tw-passagedata><tw-passagedata pid="12" name="Shots?" tags="" position="977,540" size="100,100">Your youth is like teflon for hangovers, you made it to your first lecture and had a good night out. (set: $academicScore to it + 5) (set: $socialScore to it + 5)
+
+[[Day 3 -&gt; Home - Day 3]]</tw-passagedata><tw-passagedata pid="13" name="Diet coke please" tags="" position="1107,541" size="100,100">Well done, you didn&#39;t give in to peer pressure. You do now know how this has affected your social standing (set: $academicScore to it + 5)
+
+[[Day 3 -&gt; Home - Day 3]]</tw-passagedata><tw-passagedata pid="14" name=" Home - Day 3" tags="" position="1044,688" size="100,100">Day 3:
+You made it to the induction lecture. You have been given a short list of recommended reading but some of your class mates have invited you to the QMU to pay pool.
+[[Read it]]
+[[Pool]]</tw-passagedata><tw-passagedata pid="15" name="Read it" tags="" position="965,838" size="100,100">This took some time. You do not fully understand what the textbooks said but you feel a bit more prepared for the work to come. (set: $academicScore to it + 5)
+[[Day 4 -&gt; Home - Day 4]]</tw-passagedata><tw-passagedata pid="16" name="Pool" tags="" position="1119,838" size="100,100">You are terrible at pool. Really terrible. It&#39;s embarrassing. Your new friends seemed to find it endearing. (set: $socialScore to it + 5)
+
+[[Day 4 -&gt; Home - Day 4]]</tw-passagedata><tw-passagedata pid="17" name=" Home - Day 4" tags="" position="1041,976" size="100,100">Day 4:
+The freshers fayre has presented many options if you wish to join a club or society this year. Some in particular have caught your eye.
+[[Politics Society]]
+[[Femsoc]]
+[[GUTS]]
+[[None, clubs are for losers]]</tw-passagedata><tw-passagedata pid="18" name="Politics Society" tags="" position="1065,1149" size="100,100">It turns out the GUPS is full of tories. You will make new friends here but they are all totally and utterly heartless. (set: $socialScore to it - 5)
+[[Day 5 -&gt; Home - Day 5]]</tw-passagedata><tw-passagedata pid="19" name="Femsoc" tags="" position="1235,1147" size="100,100">Femsoc welcomed you with open arms. You feel if you stay here you will indeed have a top knot and harem trousers by the end of the year. (set: $socialScore to it + 5)
+[[Day 5 -&gt; Home - Day 5]]</tw-passagedata><tw-passagedata pid="20" name="GUTS" tags="" position="1447,1149" size="100,100">Very original. At least it&#39;s course relevant. (set: $academicScore to it + 1) (set: $socialScore to it + 5)
+[[Day 5 -&gt; Home - Day 5]]
+</tw-passagedata><tw-passagedata pid="21" name="None, clubs are for losers" tags="" position="1617,1152" size="100,100">Well, that&#39;s your choice.
+[[Day 5 -&gt; Home - Day 5]]</tw-passagedata><tw-passagedata pid="22" name=" Home - Day 5" tags="" position="1347,1312" size="100,100">Day 5:
+You&#39;ve realised there isn&#39;t much to do in freshers week besides drinking
+
+[[Drink some more]]</tw-passagedata><tw-passagedata pid="23" name="Drink some more" tags="" position="1179,1447" size="100,100">˙noʎ ɹoɟ ǝuop sᴉ sɹǝɥsǝɹℲ ˙lɐǝɹun sᴉ ɹǝʌoƃuɐɥ ǝɥ┴
+(set: $socialScore to it +5)(live: 3s)[
+[[Freshers Review]] ]</tw-passagedata><tw-passagedata pid="24" name="actionbars" tags="header" position="99,472" size="100,100">&lt;div id=&quot;flex-container&quot;&gt;
+        &lt;div id=&quot;academic-bar&quot; style=&quot;float:left&quot;&gt;\
+	&lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;\
+	Academic
+&lt;/div&gt;
+        &lt;div id=&quot;social-bar&quot; style=&quot;float:left&quot;&gt;\
+	&lt;div class=&quot;bar2&quot;&gt;&lt;/div&gt;\
+	Social
+&lt;/div&gt;
+    &lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="25" name="Update Health Bar" tags="header" position="100,593" size="100,100">(print: &quot;&lt;script&gt;GE.updateHeathBar(&quot; + (text: $maxAca) + &quot;,&quot; + (text: $academicScore) + &quot;,&quot; + (text: $maxSoc) + &quot;,&quot; + (text: $socialScore) + &quot;);&quot;)
+
+</tw-passagedata><tw-passagedata pid="26" name="Freshers Review" tags="" position="1439,1454" size="100,100">Academic Score : $academicScore / $maxAca
+Social Score   : $socialScore   / $maxSoc</tw-passagedata><tw-passagedata pid="27" name="Vodka" tags="" position="1567,210" size="100,100">You have learned the most important lesson in sustained binge-drinking, vodka mixer hangovers are by far the most manageable.(set:$socialScore to it + 5)
+[[Day 2 -&gt; Halls - Day 2]]</tw-passagedata><tw-passagedata pid="28" name="Absinthe" tags="" position="1684,208" size="100,100">(set: $academicScore to it - 10) (set:$socialScore to it + 5)You are not entirely sure what happened last night. You are unsure if this is a hangover or brain damage.
+[[Day 2 -&gt; Halls - Day 2]]</tw-passagedata><tw-passagedata pid="29" name="Water" tags="" position="1796,203" size="100,100">(set:$socialScore to it + 3)Probably for the best, can&#39;t embarass yourself drinking water, right?
+[[Day 2 -&gt; Halls - Day 2]]</tw-passagedata><tw-passagedata pid="30" name=" Halls - Day 2" tags="" position="1621,413" size="100,100">Day 2:
+Your kitchen is filled with people chanting the word &#39;viper&#39;, you are not sure what a &#39;viper&#39; is?
+[[Let&#39;s find out]]
+[[Snakes? Not for me]]</tw-passagedata><tw-passagedata pid="31" name="Tennent&#39;s" tags="" position="1447,208" size="100,100">Gods nectar. Brewed in Glasgow. Simple. Sensible. Piss-water. (set:$socialScore to it + 4)
+[[Day 2 -&gt; Halls - Day 2]]</tw-passagedata><tw-passagedata pid="32" name="Let&#39;s find out" tags="" position="1546,563" size="100,100">(set: $socialScore to it + 5)🐍🐍🐍🐍🐍
+[[Day 3 -&gt; Halls - Day 3]]
+</tw-passagedata><tw-passagedata pid="33" name="Snakes? Not for me" tags="" position="1696,563" size="100,100">(set: $academicScore to it + 5) You took your free night and read the course handbook.
+[[Day 3 -&gt; Halls - Day 3]]
+</tw-passagedata><tw-passagedata pid="34" name=" Halls - Day 3" tags="" position="1617,710" size="100,100">Day 3:
+A game of beer pong has broken out in your kitchen.
+[[Leave, disgusted at the Americanisation of Scottish university life]]
+[[Stop being such a spoil sport and just play]]</tw-passagedata><tw-passagedata pid="35" name="Leave, disgusted at the Americanisation of Scottish university life" tags="" position="1542,860" size="100,100">You win on principle right? (set: $socialScore to it -5)
+[[Day 4 -&gt; Halls - Day 4]]</tw-passagedata><tw-passagedata pid="36" name="Stop being such a spoil sport and just play" tags="" position="1692,860" size="100,100">(set: $socialScore to it + 5) (set: $academicScore to it +5)
+You are the one the foretold. You are gifted in the art of beer pong. Use your power wisely.
+[[Day 4 -&gt; Halls - Day 4]]</tw-passagedata><tw-passagedata pid="37" name=" Halls - Day 4" tags="" position="1612,991" size="100,100">Day 4:
+The freshers fayre has presented many options if you wish to join a club or society this year. Some in particular have caught your eye.
+[[Politics Society]]
+[[Femsoc]]
+[[GUTS]]
+[[None, clubs are for losers]]</tw-passagedata><tw-passagedata pid="38" name="foot" tags="footer" position="103,332" size="100,100">
+
+
+
+{(link:&quot;Save game&quot;)[
+  (if:(save-game:&quot;Slot A&quot;))[
+    Game saved!
+  ](else: )[
+    Sorry, I couldn&#39;t save your game.
+  ]
+]}</tw-passagedata><tw-passagedata pid="39" name="Start" tags="" position="554.3333333333334,45.33333333333333" size="100,100">&lt;!-- Set initial variables that change here instead of in the Startup passage --&gt;
+&lt;!-- YOUR VARIABLES GO HERE --&gt;
+
+[[New Game -&gt;welcome]]
+
+(if: (saved-games:) contains &quot;Slot A&quot;)[
+(link-reveal: &quot;Load game&quot;)[
+  (load-game: &quot;Slot A&quot;)
+]
+]</tw-passagedata><tw-passagedata pid="40" name="welcome" tags="" position="561.0000000000001,185.33333333333334" size="100,100">&lt;!-- Set the text to show --&gt;
+(set: $typewriterText to &quot;Welcome to the University of Glasgow. You are now a fresher. All you must do is complete first year.&quot;)
+(display: &quot;Typewriter&quot;)
+(set: $socialScore to 50)(set: $academicScore to 50)(set: $maxAca to 100)(set: $maxSoc to 100)
+(live: 4s)[
+[[Begin]]]</tw-passagedata><tw-passagedata pid="41" name="Typewriter" tags="" position="99.1666666666667,720.6666666666666" size="100,100">{
     &lt;!-- Create a variable to track the position within the $typewriterText string --&gt;
     (set: $typewriterPos to 1)
 
@@ -151,119 +262,7 @@ It is time for [[FRESHERS WEEK]] </tw-passagedata><tw-passagedata pid="6" name="
             (stop:)
         ]
     ]
-	
-}
-(live: 4s)[
-(if: $home is true) [
-	(go-to: &quot;Home - Day 1&quot;)]
-	(else:)[(go-to: &quot;Halls - Day 1&quot;)
-]]
-
-
-</tw-passagedata><tw-passagedata pid="7" name="Home - Day 1" tags="" position="1032,50" size="100,100">Day 1:
-
-The QMU is holding an event with a hypnotic dog. You have been assured this will be a once in a lifetime event.
-[[Hypnotic Dog]]
-[[Stay home and read your course handbook]]</tw-passagedata><tw-passagedata pid="8" name="Hypnotic Dog" tags="" position="1149,226" size="100,100">Just your luck, you were called up on stage. You do not recall what happened but you now begin to salivate whenever you see dog biscuits. This has not helped you make new friends. (set: $socialScore to it - 5 )
-[[Day 2 -&gt; Home - Day 2]]</tw-passagedata><tw-passagedata pid="9" name="Stay home and read your course handbook" tags="" position="942,223" size="100,100">You&#39;ve learned there&#39;s a requirement to attend 75% of Python labs.
-(set: $academicScore to it + 5)
-
-[[Day 2 -&gt; Home - Day 2]]</tw-passagedata><tw-passagedata pid="10" name="Halls - Day 1" tags="" position="1596,5.333333333333332" size="100,100">Day 1:
-Your new flat mates are all as young and fresh faced as you. Tonight they are having a party. What is your drink of choice?
-[[Tennent&#39;s]]
-[[Vodka]]
-[[Absinthe]]
-[[Water]]
-</tw-passagedata><tw-passagedata pid="11" name=" Home - Day 2" tags="" position="1052,390" size="100,100">Day 2: 
-Tomorrow you will be given your first ever university lecture, a one hour CS induction. But tonight you&#39;ve decided to go out with friends.
-[[Shots?]]
-[[Diet coke please]]</tw-passagedata><tw-passagedata pid="12" name="Shots?" tags="" position="977,540" size="100,100">Your youth is like teflon for hangovers, you made it to your first lecture and had a good night out. (set: $academicScore to it + 5) (set: $socialScore to it + 5)
-
-[[Day 3 -&gt; Home - Day 3]]</tw-passagedata><tw-passagedata pid="13" name="Diet coke please" tags="" position="1107,541" size="100,100">Well done, you didn&#39;t give in to peer pressure. You do now know how this has affected your social standing (set: $academicScore to it + 5)
-
-[[Day 3 -&gt; Home - Day 3]]</tw-passagedata><tw-passagedata pid="14" name=" Home - Day 3" tags="" position="1044,688" size="100,100">Day 3:
-You made it to the induction lecture. You have been given a short list of recommended reading but some of your class mates have invited you to the QMU to pay pool.
-[[Read it]]
-[[Pool]]</tw-passagedata><tw-passagedata pid="15" name="Read it" tags="" position="965.6666666666666,838" size="100,100">This took some time. You do not fully understand what the textbooks said but you feel a bit more prepared for the work to come. (set: $academicScore to it + 5)
-[[Day 4 -&gt; Home - Day 4]]</tw-passagedata><tw-passagedata pid="16" name="Pool" tags="" position="1119,838" size="100,100">You are terrible at pool. Really terrible. It&#39;s embarrassing. Your new friends seemed to find it endearing. (set: $socialScore to it + 5)
-
-[[Day 4 -&gt; Home - Day 4]]</tw-passagedata><tw-passagedata pid="17" name=" Home - Day 4" tags="" position="1041,976" size="100,100">Day 4:
-The freshers fayre has presented many options if you wish to join a club or society this year. Some in particular have caught your eye.
-[[Politics Society]]
-[[Femsoc]]
-[[GUTS]]
-[[None, clubs are for losers]]</tw-passagedata><tw-passagedata pid="18" name="Politics Society" tags="" position="1065.3333333333333,1149.6666666666667" size="100,100">It turns out the GUPS is full of tories. You will make new friends here but they are all totally and utterly heartless. (set: $socialScore to it - 5)
-[[Day 5 -&gt; Home - Day 5]]</tw-passagedata><tw-passagedata pid="19" name="Femsoc" tags="" position="1235.3333333333333,1147.6666666666667" size="100,100">Femsoc welcomed you with open arms. You feel if you stay here you will indeed have a top knot and harem trousers by the end of the year. (set: $socialScore to it + 5)
-[[Day 5 -&gt; Home - Day 5]]</tw-passagedata><tw-passagedata pid="20" name="GUTS" tags="" position="1447,1149.6666666666667" size="100,100">Very original. At least it&#39;s course relevant. (set: $academicScore to it + 1) (set: $socialScore to it + 5)
-[[Day 5 -&gt; Home - Day 5]]
-</tw-passagedata><tw-passagedata pid="21" name="None, clubs are for losers" tags="" position="1617,1152.6666666666667" size="100,100">Well, that&#39;s your choice.
-[[Day 5 -&gt; Home - Day 5]]</tw-passagedata><tw-passagedata pid="22" name=" Home - Day 5" tags="" position="1347.6666666666667,1312.6666666666667" size="100,100">Day 5:
-You&#39;ve realised there isn&#39;t much to do in freshers week besides drinking
-
-[[Drink some more]]</tw-passagedata><tw-passagedata pid="23" name="Drink some more" tags="" position="1179.3333333333333,1447.6666666666667" size="100,100">˙noʎ ɹoɟ ǝuop sᴉ sɹǝɥsǝɹℲ ˙lɐǝɹun sᴉ ɹǝʌoƃuɐɥ ǝɥ┴
-(set: $socialScore to it +5)(live: 3s)[
-[[Freshers Review]] ]</tw-passagedata><tw-passagedata pid="24" name="actionbars" tags="header" position="99.66666666666666,472" size="100,100">&lt;div id=&quot;flex-container&quot;&gt;
-        &lt;div id=&quot;academic-bar&quot; style=&quot;float:left&quot;&gt;\
-	&lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;\
-	Academic
-&lt;/div&gt;
-        &lt;div id=&quot;social-bar&quot; style=&quot;float:left&quot;&gt;\
-	&lt;div class=&quot;bar2&quot;&gt;&lt;/div&gt;\
-	Social
-&lt;/div&gt;
-    &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="25" name="Update Health Bar" tags="header" position="100,593" size="100,100">(print: &quot;&lt;script&gt;GE.updateHeathBar(&quot; + (text: $maxAca) + &quot;,&quot; + (text: $academicScore) + &quot;,&quot; + (text: $maxSoc) + &quot;,&quot; + (text: $socialScore) + &quot;);&quot;)
-
-</tw-passagedata><tw-passagedata pid="26" name="Freshers Review" tags="" position="1439.6666666666667,1454" size="100,100">Academic Score : $academicScore / $maxAca
-Social Score   : $socialScore   / $maxSoc</tw-passagedata><tw-passagedata pid="27" name="Vodka" tags="" position="1567.6666666666667,210.33333333333331" size="100,100">You have learned the most important lesson in sustained binge-drinking, vodka mixer hangovers are by far the most manageable.(set:$socialScore to it + 5)
-[[Day 2 -&gt; Halls - Day 2]]</tw-passagedata><tw-passagedata pid="28" name="Absinthe" tags="" position="1684.3333333333333,208.66666666666666" size="100,100">(set: $academicScore to it - 10) (set:$socialScore to it + 5)You are not entirely sure what happened last night. You are unsure if this is a hangover or brain damage.
-[[Day 2 -&gt; Halls - Day 2]]</tw-passagedata><tw-passagedata pid="29" name="Water" tags="" position="1796,203.66666666666669" size="100,100">(set:$socialScore to it + 3)Probably for the best, can&#39;t embarass yourself drinking water, right?
-[[Day 2 -&gt; Halls - Day 2]]</tw-passagedata><tw-passagedata pid="30" name=" Halls - Day 2" tags="" position="1621,413.66666666666663" size="100,100">Day 2:
-Your kitchen is filled with people chanting the word &#39;viper&#39;, you are not sure what a &#39;viper&#39; is?
-[[Let&#39;s find out]]
-[[Snakes? Not for me]]</tw-passagedata><tw-passagedata pid="31" name="Tennent&#39;s" tags="" position="1447.6666666666665,208.66666666666666" size="100,100">Gods nectar. Brewed in Glasgow. Simple. Sensible. Piss-water. (set:$socialScore to it + 4)
-[[Day 2 -&gt; Halls - Day 2]]</tw-passagedata><tw-passagedata pid="32" name="Let&#39;s find out" tags="" position="1546,563.6666666666666" size="100,100">(set: $socialScore to it + 5)🐍🐍🐍🐍🐍
-[[Day 3 -&gt; Halls - Day 3]]
-</tw-passagedata><tw-passagedata pid="33" name="Snakes? Not for me" tags="" position="1696,563.6666666666666" size="100,100">(set: $academicScore to it + 5) You took your free night and read the course handbook.
-[[Day 3 -&gt; Halls - Day 3]]
-</tw-passagedata><tw-passagedata pid="34" name=" Halls - Day 3" tags="" position="1617.6666666666667,710.3333333333333" size="100,100">Day 3:
-A game of beer pong has broken out in your kitchen.
-[[Leave, disgusted at the Americanisation of Scottish university life]]
-[[Stop being such a spoil sport and just play]]</tw-passagedata><tw-passagedata pid="35" name="Leave, disgusted at the Americanisation of Scottish university life" tags="" position="1542.6666666666667,860.3333333333333" size="100,100">You win on principle right? (set: $socialScore to it -5)
-[[Day 4 -&gt; Halls - Day 4]]</tw-passagedata><tw-passagedata pid="36" name="Stop being such a spoil sport and just play" tags="" position="1692.6666666666667,860.3333333333333" size="100,100">(set: $socialScore to it + 5) (set: $academicScore to it +5)
-You are the one the foretold. You are gifted in the art of beer pong. Use your power wisely.
-[[Day 4 -&gt; Halls - Day 4]]</tw-passagedata><tw-passagedata pid="37" name=" Halls - Day 4" tags="" position="1612.6666666666667,991.9999999999999" size="100,100">Day 4:
-The freshers fayre has presented many options if you wish to join a club or society this year. Some in particular have caught your eye.
-[[Politics Society]]
-[[Femsoc]]
-[[GUTS]]
-[[None, clubs are for losers]]</tw-passagedata><tw-passagedata pid="38" name="Start" tags="nosave" position="107.33333333333334,87.50000000000003" size="100,100"></tw-passagedata><tw-passagedata pid="39" name=" Welcome" tags="" position="560.6666666666666,182.50000000000003" size="100,100">Welcome to the University of Glasgow. You are now a fresher. All you must do is complete first year.
-(set: $socialScore to 50)(set: $academicScore to 50)(set: $maxAca to 100)(set: $maxSoc to 100)
-(live: 3s)[
-[[Begin]]]</tw-passagedata><tw-passagedata pid="40" name="foot" tags="footer" position="103.33333333333337,332.3333333333333" size="100,100">
-
-
-
-{(link:&quot;Save game&quot;)[
-  (if:(save-game:&quot;Slot A&quot;))[
-    Game saved!
-  ](else: )[
-    Sorry, I couldn&#39;t save your game.
-  ]
-]}</tw-passagedata><tw-passagedata pid="41" name="Untitled Passage" tags="" position="351.6666666666667,62.33333333333326" size="100,100">&lt;!-- Set initial variables that change here instead of in the Startup passage --&gt;
-&lt;!-- YOUR VARIABLES GO HERE --&gt;
-(set: $_start_passage to &quot;test&quot;)
-
-[[New Game -&gt;welcome]]
-
-(if: (saved-games:) contains &quot;Slot A&quot;)[
-(link-reveal: &quot;Load game&quot;)[
-  (load-game: &quot;Slot A&quot;)
-]
-]</tw-passagedata><tw-passagedata pid="42" name="welcome" tags="" position="351.6666666666667,212.33333333333326" size="100,100">Welcome to the University of Glasgow. You are now a fresher. All you must do is complete first year.
-(set: $socialScore to 50)(set: $academicScore to 50)(set: $maxAca to 100)(set: $maxSoc to 100)
-(live: 3s)[
-[[Begin]]]</tw-passagedata></tw-storydata>
+}</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
