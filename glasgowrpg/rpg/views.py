@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from datetime import datetime
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from rpg.forms import UserForm, UserProfileForm #added euan's part
 
 

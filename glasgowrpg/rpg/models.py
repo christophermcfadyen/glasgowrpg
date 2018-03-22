@@ -4,11 +4,11 @@ from django.template.defaultfilters import slugify
 
 #authentication model can be used as player model.
 class UserProfile(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.PROTECT)
     displayname = models.CharField(max_length = 20, unique = True)
     academic_score = models.IntegerField(default = 0)
     social_score = models.IntegerField(default = 0)
-    
+
     slug = models.SlugField()#modified
     #website = models.URLField(blank=True)#there if you want it
     picture = models.ImageField(upload_to='profile_images', blank=True)#modified
@@ -17,7 +17,7 @@ class UserProfile(models.Model):
     def save(self, *args, **kwargs):#
         self.slug = slugify(self.displayname)#
         super(UserProfile, self).save(*args, **kwargs)#
-        
+
     class Meta():
         verbose_name_plural = "Players"
 
