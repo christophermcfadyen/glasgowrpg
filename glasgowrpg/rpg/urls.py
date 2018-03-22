@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'register/$', views.register, name='register'),
     url(r'play/$', views.play, name='play'),
     url(r'stats/$', views.stats, name='stats'),
-    url(r'userprofile/$', views.userprofile, name='userprofile'),]
+    url(r'userprofile/$', views.userprofile, name='userprofile'),
+    url(r'logout/$', views.user_logout, name='logout'),]
