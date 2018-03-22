@@ -4,7 +4,7 @@
 
 
 <html>
-    
+
         <head lang ="en">
 			<meta charset ="UTF-8">
             <title>
@@ -19,14 +19,14 @@
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         </head>
-        
+
 	<body>
-	
-		<!-- <div id = "header1" > 
+
+		<!-- <div id = "header1" >
 			<!--add image REMOVED HEADER AFTER SUCCESSFULL NAV BAR IMPLEMENTATION
 			<h1> Glasgow RPG </h1>
 		</div>-->
-	
+
 		<!--Navigation bar-->
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
@@ -34,19 +34,21 @@
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>                        
+						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="#">GlasgowRPG</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
-				
+
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="{% url 'home' %}">Home</a></li>
 						<li><a href="{% url 'about' %}">About</a></li>
 						<li><a href="{% url 'help' %}">Help</a></li>
 						<li><a href="{% url 'play' %}">Play</a></li>
+						<li><a href="{% url 'stats' %}"><span class="glyphicon glyphicon-statsGame"></span>Game Statistics</a></li>
+						<li><a href="{% url 'userprofile' %}"><span class="glyphicon glyphicon-user"></span>My Profile</a></li>
 					</ul>
-					
+
 					<!--{% if user.is_authenticated %}
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="{% url 'stats' %}"><span class="glyphicon glyphicon-statsGame"></span>Game Statistics</a></li>
@@ -59,19 +61,19 @@
 						<li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</ul>
 					{% endif %}
-					
+
 				</div>
 			</div>
 		</nav>
 
-		
+
 		<!--<div id = "taskbar"> <!--taskbar which appears at the top of every page
 			<ul>
 			<li><a href="{% url 'home' %}">Home</a></li>
 			<li><a href="{% url 'about' %}">About</a></li>
 			<li><a href="{% url 'help' %}">Help</a></li>
             <li><a href="{% url 'play' %}">Play</a></li>
-			
+
 			{% if user.is_authenticated %}
 				<li><a href="{% url 'logout' %}">Logout</a></li>
 				<li><a href="{% url 'stats' %}">Game Statistics</a></li>
@@ -80,16 +82,16 @@
 			{% else %}
                 <li><a href="{% url 'login' %}">Sign In</a></li>
                 <li><a href="{% url 'register' %}">Sign Up</a></li>
-                
+
             {% endif %}
             </ul>
 		</div> -->
-		
+
 		<div>
-            {% block body_block %} 
+            {% block body_block %}
 				<!-- page specific content will be displayed here-->
 			{% endblock %}
         </div>
-		
+
 	</body>
 </html>
