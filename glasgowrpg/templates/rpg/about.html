@@ -3,7 +3,7 @@
 {% load staticfiles %}
 
 {% block title_block %}
-    About 
+    About
 {% endblock %}
 
 
@@ -11,19 +11,20 @@
     <h1>
        This is the About page.
     </h1>
-	
-    <div> <!-- css might be added later-->
+
+    <div style = "margin-left: 40px;"> <!-- css might be added later-->
         Glasgow RPG is a free to play, texted-base RPG, developed by 3 second year students of University of Glasgow.
-		Han Meng Loo, Christopher Macfayden and Euan Temporal.
-		We hope you enjoy this game!
-		You can contact us <!-- add contact method, email, number -->
+		Han Meng Loo, Christopher McFadyen and Euan Temporal.
+		We hope you enjoy this game!<span class="blinking-cursor">|</span>
 	<div>
-	
+
+	<!--
     <div>
-	<!-- add group picture later-->
+	 add group picture later
         <img src="{% static "images/teampicture.jpg" %}"
             alt="Picture of the team" />
         <img src="{{ MEDIA_URL }}teampicture.jpg">
     </div>
-	
+    -->
+
 {% endblock %}

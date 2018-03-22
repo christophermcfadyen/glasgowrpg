@@ -8,15 +8,16 @@
 {% block body_block %}
 
     <h1>Create your free account to start playing</h1>
-   	
+
+   	<div style = "margin-left: 40px;">
 	{% if registered %}
     <strong>Thank you for registering!</strong>
     <a href="{% url 'home' %}">Return to the homepage.</a><br />
 	{% else %}
     <strong>Register here!</strong><br />
-	
+
     <form id="user_form" method="post" action="{% url 'register' %}" enctype="multipart/form-data">
-    
+
     {% csrf_token %}
 
     {{ user_form.as_p }}
@@ -24,7 +25,8 @@
 
     <input type="submit" name="submit" value="Register" />
     </form>
+    </div>
   {% endif %}
-	
-	
+
+
 {% endblock %}

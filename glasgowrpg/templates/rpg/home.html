@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 {% extends 'rpg/base.html' %}
-{% load staticfiles %} 
+{% load staticfiles %}
+
+
 
 {% block title_block %}
-    Home 
+    Home
 {% endblock %}
 
 {% block body_block %}
-
     <h1>Welcome to Glasgow RPG</h1>
-    
-	<div>
+	<div style = "margin-left: 40px;">
     {% if user.is_authenticated %}
         Greetings {{ user.username }}!
-		
+
     {% else %}
-        An exciting journey awaits you, create your free account to start playing now !
+        An exciting journey awaits you, create your free account to start playing now ! <span class="blinking-cursor">|</span>
 	{% endif %}
 	</div>
-	      
+
 
 {% endblock %}
 
