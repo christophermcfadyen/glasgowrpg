@@ -1,9 +1,3 @@
 glasgowRPG is a text-based adventure game created by Han, Chris and Euan.
-http://2030808m.pythonanywhere.com<br />
-     __             __   __   __        __   __   __
+http://2030808m.pythonanywhere.com
 
-
-    / _` |     /\  /__` / _` /  \ |  | |__) |__) / _`
-
-
-___ \__> |___ /~~\ .__/ \__> \__/ |/\| |  \ |    \__>
