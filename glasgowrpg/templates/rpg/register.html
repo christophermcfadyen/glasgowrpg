@@ -13,9 +13,9 @@
 	{% if registered %}
     <strong>Thank you for registering!</strong>
     <a href="{% url 'home' %}">Return to the homepage.</a><br />
+    
 	{% else %}
     <strong>Register here!</strong><br />
-
     <form id="user_form" method="post" action="{% url 'register' %}" enctype="multipart/form-data">
 
     {% csrf_token %}
