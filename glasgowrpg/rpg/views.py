@@ -5,13 +5,14 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from datetime import datetime
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from rpg.forms import UserForm, UserProfileForm
 
 
 def home(request):
-    user_list = UserProfile.objects.order_by('-academic_score')[:3]
-    context_dict = {'users', user_list}
+    #user_list = UserProfile.objects.order_by('-academic_score')[:3]
+    #context_dict = {'users', user_list}
+    context_dict = {}
     response = render(request, 'rpg/home.html', context=context_dict)
     return response
 
@@ -19,11 +20,11 @@ def home(request):
 def about(request):
     context_dict =  {'boldmessage': "about"}
     return render(request, 'rpg/about.html', context=context_dict)
-    
+
 def help(request):
     context_dict =  {'boldmessage': "help"}
     return render(request, 'rpg/help.html', context=context_dict)
-    
+
 def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -41,7 +42,7 @@ def user_login(request):
             return HttpResponse("Invalid login details supplied.")
     else:
         return render(request, 'rpg/login.html', {})
-    
+
 def register(request):
     registered = False
 
@@ -72,11 +73,15 @@ def register(request):
 def stats(request):
     print("TBA")
 
+def userprofile(request):
+    context_dict = {'boldmessage': "userprofile"}
+    return render(request, 'rpg/userprofile.html', context=context_dict)
+
 '''
 user should be logged in to play... otherwise you are not restricting
 any functionality of the site to the users?
 '''
-@login_required   
+@login_required
 def play(request):
     context_dict = {'boldmessage': "play"}
     return render(request, 'rpg/play.html', context=context_dict)
