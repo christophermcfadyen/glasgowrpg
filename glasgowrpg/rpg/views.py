@@ -71,7 +71,9 @@ def register(request):
                    'registered':registered})
 
 def stats(request):
+    context_dict = {'boldmessage': "stats"}
     print("TBA")
+    return render(request, 'rpg/stats.html', context=context_dict)
 
 def userprofile(request):
     context_dict = {'boldmessage': "userprofile"}
