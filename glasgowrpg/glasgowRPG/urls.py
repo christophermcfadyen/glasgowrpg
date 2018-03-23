@@ -27,7 +27,5 @@ urlpatterns = [
     # with rango/ to be handled by
     # the rango application
     url(r'^admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)#modified
-
-#used to be static url
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)#modified
 

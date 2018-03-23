@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
-{% load staticfiles %}
-
+{% load static %}
 
 <html>
 
@@ -12,7 +11,7 @@
 			`		Welcome to Glasgow Rpg!
 				{% endblock %}
 			</title>
-			<link rel="stylesheet" href="{% static 'css/stylesheet.css' %}" type = "text/css"> <!-- will add the stylesheet later-->
+			<link rel="stylesheet" href="{% static 'css/stylesheet.css' %}" type = "text/css">
 			<meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -66,7 +65,7 @@
 		    <head>
                 {% load static %}
 
-                <link rel="stylesheet" type="text/css" href="{% static '/css/console.css' %}" />
+                <link rel="stylesheet" type="text/css" href="{% static 'css/console.css' %}" />
 
             </head>
 

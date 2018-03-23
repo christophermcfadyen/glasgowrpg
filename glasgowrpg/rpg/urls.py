@@ -1,5 +1,7 @@
 from django.conf.urls import url
 from rpg import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -11,4 +13,5 @@ urlpatterns = [
     url(r'play/$', views.play, name='play'),
     url(r'stats/$', views.stats, name='stats'),
     url(r'userprofile/$', views.userprofile, name='userprofile'),
-    url(r'logout/$', views.user_logout, name='logout'),]
+    url(r'logout/$', views.user_logout, name='logout'),
+    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
