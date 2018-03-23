@@ -2,8 +2,6 @@
 {% extends 'rpg/base.html' %}
 {% load staticfiles %}
 
-
-
 {% block title_block %}
     Home
 {% endblock %}
@@ -13,6 +11,7 @@
 	<div style = "margin-left: 40px;">
     {% if user.is_authenticated %}
         Greetings {{ user.username }}!
+        <li><a href="{% url 'play' %}">Play Now</a></li>
 
     {% else %}
         An exciting journey awaits you, create your free account to start playing now ! <span class="blinking-cursor">|</span>

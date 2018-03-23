@@ -1,9 +1,87 @@
-li a {
-    color: green;
-}
-body {
-    background: black;
-}
-div {
-    background: black;
-}
+
+@import url('https://fonts.googleapis.com/css?family=VT323');
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: VT323;
+
+
+        }
+
+        h1 {
+            color: white;
+            margin-left: 40px;
+            font-family: VT323;
+        }
+
+        .blinking-cursor {
+          font-weight: 100;
+          font-size: 30px;
+          color: #2E3D48;
+          -webkit-animation: 1s blink step-end infinite;
+          -moz-animation: 1s blink step-end infinite;
+          -ms-animation: 1s blink step-end infinite;
+          -o-animation: 1s blink step-end infinite;
+          animation: 1s blink step-end infinite;
+        }
+
+        @keyframes "blink" {
+          from, to {
+            color: transparent;
+          }
+          50% {
+            color: #00ff00;
+          }
+        }
+
+        @-moz-keyframes blink {
+          from, to {
+            color: transparent;
+          }
+          50% {
+            color: #00ff00;
+          }
+        }
+
+        @-webkit-keyframes "blink" {
+          from, to {
+            color: transparent;
+          }
+          50% {
+            color: #00ff00;
+          }
+        }
+
+        @-ms-keyframes "blink" {
+          from, to {
+            color: transparent;
+          }
+          50% {
+            color: #00ff00;
+          }
+        }
+
+        @-o-keyframes "blink" {
+          from, to {
+            color: transparent;
+          }
+          50% {
+            color: #00ff00;
+          }
+        }
+
+    input[type=submit] {
+        padding:5px 5px;
+        background:black;
+        border:1 white;
+        cursor:pointer;
+        -webkit-border-radius: 1px;
+        border-radius: 1px;
+    }
+    input[type=text] {
+    color: black;
+    }
+    input[type=password] {
+    color: black;
+    }
+
