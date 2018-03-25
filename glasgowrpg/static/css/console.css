@@ -109,6 +109,13 @@
 		font-size: 30px;
 	}
 	
+	.navbar-brand>img {
+		height: 100%;
+		padding: 15px; /* firefox bug fix */
+		width: auto;
+	}
+	
+	
 
 		
 
