@@ -12,6 +12,7 @@
             color: white;
             margin-left: 40px;
             font-family: VT323;
+			font-size: large;
         }
 
         .blinking-cursor {
