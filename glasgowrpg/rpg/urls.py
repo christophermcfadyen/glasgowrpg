@@ -3,6 +3,7 @@ from rpg import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+##urls in use. /rpg/[url]
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),

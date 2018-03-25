@@ -70,19 +70,22 @@ def register(request):
                    'profile_form':profile_form,
                    'registered':registered})
 
+
+#Restricted pages.
+
+@login_required
 def stats(request):
     context_dict = {'boldmessage': "stats"}
     print("TBA")
     return render(request, 'rpg/stats.html', context=context_dict)
-
+@login_required
 def userprofile(request):
     context_dict = {'boldmessage': "userprofile"}
     return render(request, 'rpg/userprofile.html', context=context_dict)
 
-'''
-user should be logged in to play... otherwise you are not restricting
-any functionality of the site to the users?
-'''
+
+#User should be logged in to play.
+
 @login_required
 def play(request):
     context_dict = {'boldmessage': "play"}

@@ -24,8 +24,8 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^rpg/', include('rpg.urls')),
     # above maps any URLs starting
-    # with rango/ to be handled by
-    # the rango application
+    # with rpg/ to be handled by
+    # the glasgowrpg application
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)#modified
 

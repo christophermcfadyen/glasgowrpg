@@ -24,19 +24,3 @@ class UserProfile(models.Model):
     def __str__(self):
         return self.user.username
 
-class Game(models.Model):
-    status = models.IntegerField(default = 0)
-    name = models.CharField(max_length = 20)
-
-    class Meta():
-        verbose_name_plural = "Games"
-
-    def __str__(self):
-        return self.name
-
-class Question(models.Model):
-    question_no = models.IntegerField(default = 0)
-    question_text = models.CharField(max_length = 100)
-
-    def __str__(self):
-        return self.question_no
