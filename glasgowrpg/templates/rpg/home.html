@@ -8,7 +8,8 @@
 
 {% block body_block %}
     <h1>Welcome to Glasgow RPG</h1>
-	<div style = "margin-left: 40px;">
+	
+	<div style = "margin-left: 40px;" class = "pagecontent">
     {% if user.is_authenticated %}
         Greetings {{ user.username }}!
         <li><a href="{% url 'play' %}">Play Now</a></li>
