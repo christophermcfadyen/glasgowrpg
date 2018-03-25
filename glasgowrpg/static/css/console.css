@@ -113,6 +113,7 @@
 	
 
 	.navbar-brand img {
+		float :left;
 		max-height: 100%;
 	}
 	
