@@ -10,14 +10,16 @@
 	Here are the details of your account
 	</h1>
 
-	<div style = "margin-left: 40px;" class = "pagecontent">
-	<p>Email : {{user.email}}</p>
+	<div style = "margin-left: 40px;" >
+		<div class = "pagecontent">
+			<p>Email : {{user.email}}</p>
 
-	<p>Username: {{user.username}} </p>
+			<p>Username: {{user.username}} </p>
+	
+			<p>First day of University: </p> <!-- to include the account creation date, from django date_joined-->
 
-	<p>First day of University: </p> <!-- to include the account creation date, from django date_joined-->
-
-	<p>Current status bars: </p> <!-- displaying social and academic bars-->
+			<p>Current status bars: </p> <!-- displaying social and academic bars-->
+		</div>
 	</div>
 
 {% endblock %}
