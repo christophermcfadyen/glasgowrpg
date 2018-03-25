@@ -97,11 +97,15 @@
         }
 		
 	.nav a{
-    color: white !important;
+    color: red !important;
     font-size: 1.8em !important;
     }
 	
 	.nav li{
     padding-right:5px;
    }
+   
+	.navbar-brand {
+		font-size: 30px;
+	}
 
