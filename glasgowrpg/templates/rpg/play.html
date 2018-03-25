@@ -85,6 +85,19 @@ tw-include[title="Update Social Bar"] {
     background: #369;
 }
 
+a:link {
+  color: white;
+  text-decoration: none;
+  font-family: VT323;
+  font-size: 30px;
+}
+a:visited {
+    color: white;
+}
+
+tw-sidebar{
+	visibility: hidden
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/* Create an unique private namespace to contain custom code. */
 if (!window.GE) {
 	window.GE = {};
@@ -100,7 +113,7 @@ window.GE.updateHeathBar = function (maxAca, academicScore, maxSoc, socialScore)
 	outer.data('total', maxAca);
 	outer.data('value', academicScore);
 	inner.css('width', barWidth + "%");
-	
+
 	var
 		outer = $('#social-bar'),
 		inner = outer.find('.bar2'),
@@ -109,13 +122,14 @@ window.GE.updateHeathBar = function (maxAca, academicScore, maxSoc, socialScore)
 	outer.data('total', maxSoc);
 	outer.data('value', socialScore);
 	inner.css('width', barWidth + "%");
-	
+
 
 };
 
-</script><tw-tag name="startup" color="red"></tw-tag>,<tw-tag name="footer" color="orange"></tw-tag>,<tw-tag name="header" color="red"></tw-tag><tw-passagedata pid="1" name="Begin" tags="" position="566,372" size="100,100">Rightly, you have chose to be a Computing Science student but you must now choose another subject to fill your timetable. 
+
+</script><tw-tag name="startup" color="red"></tw-tag>,<tw-tag name="footer" color="orange"></tw-tag>,<tw-tag name="header" color="red"></tw-tag><tw-passagedata pid="1" name="Begin" tags="" position="566,372" size="100,100">Rightly, you have chose to be a Computing Science student but you must now choose another subject to fill your timetable.
 There are two option which will currently fit your timetable:
-[[Mathematics]] 
+[[Mathematics]]
 [[Film and Television]]</tw-passagedata><tw-passagedata pid="2" name="Mathematics" tags="" position="468,516" size="100,100">(set: $scoreModifier to 1.0)
 You&#39;ve chosen mathematics, not making things easier for yourself. You will have no score modifier.
 
@@ -127,7 +141,7 @@ You&#39;ve chosen film and TV, making things easier for yourself. You will have 
 Now your timetable is in order. Did you choose to live at
 [[Home]] or in [[Halls]]
 </tw-passagedata><tw-passagedata pid="4" name="Home" tags="" position="463,721" size="100,100">You will never want for food and your mum does your washing.
-(set: $home to true) 
+(set: $home to true)
 You are now ready to embrace [[FRESHERS WEEK]]</tw-passagedata><tw-passagedata pid="5" name="Halls" tags="" position="664,719" size="100,100">You have joined the legions of overcharged students and moved to accomidation closely reembling a Serbian prison
 (set: $home to false)
 It is time for [[FRESHERS WEEK]] </tw-passagedata><tw-passagedata pid="6" name="FRESHERS WEEK" tags="" position="561,894" size="100,100">
@@ -154,7 +168,7 @@ Your new flat mates are all as young and fresh faced as you. Tonight they are ha
 [[Vodka]]
 [[Absinthe]]
 [[Water]]
-</tw-passagedata><tw-passagedata pid="11" name=" Home - Day 2" tags="" position="1052,390" size="100,100">Day 2: 
+</tw-passagedata><tw-passagedata pid="11" name=" Home - Day 2" tags="" position="1052,390" size="100,100">Day 2:
 Tomorrow you will be given your first ever university lecture, a one hour CS induction. But tonight you&#39;ve decided to go out with friends.
 [[Shots?]]
 [[Diet coke please]]</tw-passagedata><tw-passagedata pid="12" name="Shots?" tags="" position="977,540" size="100,100">Your youth is like teflon for hangovers, you made it to your first lecture and had a good night out. (set: $academicScore to it + 5) (set: $socialScore to it + 5)
@@ -220,14 +234,18 @@ The freshers fayre has presented many options if you wish to join a club or soci
 [[None, clubs are for losers]]</tw-passagedata><tw-passagedata pid="38" name="foot" tags="footer" position="103,332" size="100,100">
 
 
-
+&lt;div id=&quot;flex-container&quot;&gt;
 {(link:&quot;Save game&quot;)[
   (if:(save-game:&quot;Slot A&quot;))[
     Game saved!
   ](else: )[
     Sorry, I couldn&#39;t save your game.
   ]
-]}</tw-passagedata><tw-passagedata pid="39" name="Start" tags="" position="554.3333333333334,45.33333333333333" size="100,100">&lt;!-- Set initial variables that change here instead of in the Startup passage --&gt;
+]}
+
+&lt;a href=&quot;{% url 'home' %}&quot;&gt;Quit&lt;/a&gt;
+
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="Start" tags="" position="554,45" size="100,100">&lt;!-- Set initial variables that change here instead of in the Startup passage --&gt;
 &lt;!-- YOUR VARIABLES GO HERE --&gt;
 
 [[New Game -&gt;welcome]]
@@ -236,12 +254,12 @@ The freshers fayre has presented many options if you wish to join a club or soci
 (link-reveal: &quot;Load game&quot;)[
   (load-game: &quot;Slot A&quot;)
 ]
-]</tw-passagedata><tw-passagedata pid="40" name="welcome" tags="" position="561.0000000000001,185.33333333333334" size="100,100">&lt;!-- Set the text to show --&gt;
+]</tw-passagedata><tw-passagedata pid="40" name="welcome" tags="" position="561,185" size="100,100">&lt;!-- Set the text to show --&gt;
 (set: $typewriterText to &quot;Welcome to the University of Glasgow. You are now a fresher. All you must do is complete first year.&quot;)
 (display: &quot;Typewriter&quot;)
 (set: $socialScore to 50)(set: $academicScore to 50)(set: $maxAca to 100)(set: $maxSoc to 100)
 (live: 4s)[
-[[Begin]]]</tw-passagedata><tw-passagedata pid="41" name="Typewriter" tags="" position="99.1666666666667,720.6666666666666" size="100,100">{
+[[Begin]]]</tw-passagedata><tw-passagedata pid="41" name="Typewriter" tags="" position="99,720" size="100,100">{
     &lt;!-- Create a variable to track the position within the $typewriterText string --&gt;
     (set: $typewriterPos to 1)
 
