@@ -8,12 +8,15 @@
 
 {% block body_block %}
     <h1>Welcome to Glasgow RPG</h1>
-	
+
 	<div style = "margin-left: 40px;">
 		<div class = "pagecontent">
 		{% if user.is_authenticated %}
 			Greetings {{ user.username }}!
-			<li><a href="{% url 'play' %}">Play Now</a></li>
+
+			<form action="{% url 'play' %}">
+                <input type="submit" value="Play Now" />
+            </form>
 
 		{% else %}
 			An exciting journey awaits you, create your free account to start playing now ! <span class="blinking-cursor">|</span>
