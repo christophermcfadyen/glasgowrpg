@@ -10,13 +10,14 @@ class UserProfile(models.Model):
     social_score = models.IntegerField(default = 0)
 
     #stats
-    no_grads = models.IntegerField(default=1, blank=False, null=False)
-    no_viper = models.IntegerField(default=1, blank=False, null=False)
-    no_homework = models.IntegerField(default=1, blank=False, null=False)
-    no_tennent = models.IntegerField(default=1, blank=False, null=False)
-    no_drop = models.IntegerField(default=1, blank=False, null=False)
+    no_grads = models.IntegerField(default=0, blank=False, null=False)
+    no_viper = models.IntegerField(default=0, blank=False, null=False)
+    no_homework = models.IntegerField(default=0, blank=False, null=False)
+    no_tennent = models.IntegerField(default=0, blank=False, null=False)
+    no_drop = models.IntegerField(default=0, blank=False, null=False)
 
     slug = models.SlugField()#modified
+    
     #website = models.URLField(blank=True)#there if you want it
     picture = models.ImageField(upload_to='profile_images', blank=True)#modified
 
