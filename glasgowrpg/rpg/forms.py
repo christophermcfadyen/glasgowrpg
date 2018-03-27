@@ -14,10 +14,17 @@ class UserProfileForm(forms.ModelForm):
     academic_score = forms.IntegerField(widget = forms.HiddenInput(), initial = 0)
     social_score = forms.IntegerField(widget = forms.HiddenInput(), initial = 0)
 
+    no_grads = forms.IntegerField(widget = forms.HiddenInput(), initial = 0)
+    no_viper = forms.IntegerField(widget = forms.HiddenInput(), initial = 0)
+    no_homework = forms.IntegerField(widget = forms.HiddenInput(), initial = 0)
+    no_tennent = forms.IntegerField(widget = forms.HiddenInput(), initial = 0)
+    no_drop = forms.IntegerField(widget = forms.HiddenInput(), initial = 0)
+
     class Meta:
         model = UserProfile
         #exclude = ('user',)
-        fields = ('picture', 'displayname','academic_score','social_score')#changed
+        fields = ('picture', 'displayname','academic_score','social_score'
+        ,'no_grads','no_viper','no_homework','no_tennent','no_drop')#changed
 
 
 

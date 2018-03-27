@@ -10,29 +10,29 @@
 	<h1>
 	Here are your game statistics {{user.username}} !
 	</h1>
-	
+
     <div style = "margin-left: 40px;">
 		<div class = "pagecontent">
 		<p>
-		Number of graduations: 4
+		Number of graduations: {{user.academic_score|stringformat:"i"}}
 		</p>
 
 		<p>
-		Times in Viper: 12
+		Times in Viper: {{user.no_viper}}
 		</p>
 
 		<p>
-		Drop outs: 12
+		Drop outs: {{user.no_drop}}
 		</P>
 
 		<p>
-		John Williamson homeworks completed: 1
+		John Williamson homeworks completed: {{user.no_homework}}
 		</P>
 
 		<p>
-		Pints of Tennent's: 56
+		Pints of Tennent's: {{user.no_tennent}}
 		</P>
-		
+
 		</div>
 	</div>
 
