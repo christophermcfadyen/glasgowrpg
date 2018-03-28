@@ -88,9 +88,10 @@ class LoginPageTest(TestCase):
 
 class PlayPageTest(TestCase):
 
-    def test_play_response(self):
+    def test_play_response_without_login(self):
         response = self.client.get(reverse('play'))
         self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Login")
 
     def test_play_template(self):
         response = self.client.get(reverse('play'))
