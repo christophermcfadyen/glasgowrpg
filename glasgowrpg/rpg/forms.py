@@ -22,9 +22,8 @@ class UserProfileForm(forms.ModelForm):
 
     class Meta:
         model = UserProfile
-        #exclude = ('user',)
         fields = ('picture', 'displayname','academic_score','social_score'
-        ,'no_grads','no_viper','no_homework','no_tennent','no_drop')#changed
+        ,'no_grads','no_viper','no_homework','no_tennent','no_drop')
 
 
 

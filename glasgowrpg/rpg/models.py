@@ -18,10 +18,10 @@ class UserProfile(models.Model):
 
     slug = models.SlugField()#modified
     
-    #website = models.URLField(blank=True)#there if you want it
-    picture = models.ImageField(upload_to='profile_images', blank=True)#modified
+    #website = models.URLField(blank=True)
+    picture = models.ImageField(upload_to='profile_images', blank=True)
 
-    #new method#
+    #new method
     def save(self, *args, **kwargs):
         self.slug = slugify(self.displayname)
         super(UserProfile, self).save(*args, **kwargs)

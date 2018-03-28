@@ -8,23 +8,23 @@ from datetime import datetime
 from django.urls import reverse
 from rpg.forms import UserForm, UserProfileForm
 
-
+#home page view
 def home(request):
-    #user_list = UserProfile.objects.order_by('-academic_score')[:3]
-    #context_dict = {'users', user_list}
     context_dict = {}
     response = render(request, 'rpg/home.html', context=context_dict)
     return response
 
-
+#about page view
 def about(request):
     context_dict =  {'boldmessage': "about"}
     return render(request, 'rpg/about.html', context=context_dict)
 
+#help page view
 def help(request):
     context_dict =  {'boldmessage': "help"}
     return render(request, 'rpg/help.html', context=context_dict)
 
+#login page view
 def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -43,6 +43,7 @@ def user_login(request):
     else:
         return render(request, 'rpg/login.html', {})
 
+#register page view
 def register(request):
     registered = False
 
@@ -73,6 +74,7 @@ def register(request):
 
 #Restricted pages.
 
+#stats page view
 @login_required
 def stats(request):
     #Pass userprofile model to stats.
@@ -84,6 +86,7 @@ def stats(request):
 
     return render(request, 'rpg/stats.html', stu)
 
+#userprofile page view
 @login_required
 def userprofile(request):
     context_dict = {'boldmessage': "userprofile"}
@@ -91,7 +94,7 @@ def userprofile(request):
 
 
 #User should be logged in to play.
-
+#play page view
 @login_required
 def play(request):
     context_dict = {'boldmessage': "play"}
