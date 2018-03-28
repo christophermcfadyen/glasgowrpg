@@ -90,8 +90,7 @@ class PlayPageTest(TestCase):
 
     def test_play_response_without_login(self):
         response = self.client.get(reverse('play'))
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Login")
+        self.assertEqual(response.status_code, 302)
 
     def test_play_template(self):
         response = self.client.get(reverse('play'))
@@ -110,9 +109,9 @@ class RegisterPageTest(TestCase):
 
 class StatsPageTest(TestCase):
 
-    def test_stats_response(self):
+    def test_stats_response_without_login(self):
         response = self.client.get(reverse('stats'))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
     def test_stats_template(self):
         response = self.client.get(reverse('stats'))
@@ -120,9 +119,9 @@ class StatsPageTest(TestCase):
 
 class UserprofilePageTest(TestCase):
 
-    def test_userprofile_response(self):
+    def test_userprofile_response_without_login(self):
         response = self.client.get(reverse('userprofile'))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
     def test_userprofile_template(self):
         response = self.client.get(reverse('userprofile'))
