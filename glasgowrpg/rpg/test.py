@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.contrib.auth import views as auth_views
 from rpg.models import *
 from rpg.views import *
@@ -11,15 +11,15 @@ class SimpleTest(TestCase):
     def setUp(self):
         # Every test needs a client.
         self.client = Client()
-        
+
     def test_addition(self):
-        
+
         # Ensure that tests are working
         self.assertEqual(1 + 2, 3)
 
 
 class StaticFileTests(TestCase):
-    
+
     def test_static_files(self):
 
         # test if logo is printed
@@ -30,7 +30,7 @@ class StaticFileTests(TestCase):
 
 
 
-#Page Tests, response , templates and message display  
+#Page Tests, response , templates and message display
 class AboutPageTest(TestCase):
 
     def test_about_response(self):
@@ -42,13 +42,13 @@ class AboutPageTest(TestCase):
         response = self.client.get(reverse('about'))
         self.assertTemplateUsed(response, 'rpg/about.html')
 
-     def test_about_contains_message(self):
+    def test_about_contains_message(self):
         response = self.client.get(reverse('about'))
         self.assertIn(b'Glasgow RPG is a free to play', response.content)
 
 
 class HelpPageTest(TestCase):
-    
+
     def test_help_response(self):
         response = self.client.get(reverse('help'))
         self.assertEqual(response.status_code, 200)
@@ -58,7 +58,7 @@ class HelpPageTest(TestCase):
         self.assertTemplateUsed(response, 'rpg/help.html')
 
 class HomePageTest(TestCase):
-    
+
     def test_home_response(self):
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
@@ -68,7 +68,7 @@ class HomePageTest(TestCase):
         self.assertTemplateUsed(response, 'rpg/home.html')
 
 class LoginPageTest(TestCase):
-    
+
     def test_login_response(self):
         response = self.client.get(reverse('login'))
         self.assertEqual(response.status_code, 200)
@@ -76,9 +76,9 @@ class LoginPageTest(TestCase):
     def test_login_template(self):
         response = self.client.get(reverse('login'))
         self.assertTemplateUsed(response, 'rpg/login.html')
-        
+
 class PlayPageTest(TestCase):
-    
+
     def test_play_response(self):
         response = self.client.get(reverse('play'))
         self.assertEqual(response.status_code, 200)
@@ -88,7 +88,7 @@ class PlayPageTest(TestCase):
         self.assertTemplateUsed(response, 'rpg/play.html')
 
 class RegisterPageTest(TestCase):
-    
+
     def test_register_response(self):
         response = self.client.get(reverse('register'))
         self.assertEqual(response.status_code, 200)
@@ -99,7 +99,7 @@ class RegisterPageTest(TestCase):
 
 
 class StatsPageTest(TestCase):
-    
+
     def test_stats_response(self):
         response = self.client.get(reverse('stats'))
         self.assertEqual(response.status_code, 200)
@@ -108,8 +108,8 @@ class StatsPageTest(TestCase):
         response = self.client.get(reverse('stats'))
         self.assertTemplateUsed(response, 'rpg/stats.html')
 
-class UserprofilePageTest(TestCase):        
-    
+class UserprofilePageTest(TestCase):
+
     def test_userprofile_response(self):
         response = self.client.get(reverse('userprofile'))
         self.assertEqual(response.status_code, 200)
@@ -117,21 +117,21 @@ class UserprofilePageTest(TestCase):
     def test_userprofile_template(self):
         response = self.client.get(reverse('userprofile'))
         self.assertTemplateUsed(response, 'rpg/userprofile.html')
-    
+
 
 #Test for user section of the web app
-        
+
 class UserManagementTest(TestCase):
-    
+
     def setUp(self):
         user = User.objects.create_user("testUsername", "test@gmail.com", "testPassword")
         UserProfile.objects.create(user=user)
 
     def testUserExists(self):
-    
+
         user = User.objects.get(username="testUsername")
         UserProfile.objects.get(user=user)
-        
+
         self.assertEqual(1, UserProfile.objects.count(), "Number of Profiles must be 1")
 
     def testLogIn(self):
