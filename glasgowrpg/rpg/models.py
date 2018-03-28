@@ -10,11 +10,11 @@ class UserProfile(models.Model):
     social_score = models.IntegerField(default = 0)
 
     #stats
-    no_grads = models.IntegerField(default=5)
-    no_viper = models.IntegerField(default=1, blank=False, null=False)
-    no_homework = models.IntegerField(default=1, blank=False, null=False)
-    no_tennent = models.IntegerField(default=15)
-    no_drop = models.IntegerField(default=1, blank=False, null=False)
+    no_grads = models.IntegerField(default=0, blank=False, null=False)
+    no_viper = models.IntegerField(default=0, blank=False, null=False)
+    no_homework = models.IntegerField(default=0, blank=False, null=False)
+    no_tennent = models.IntegerField(default=0, blank=False, null=False)
+    no_drop = models.IntegerField(default=0, blank=False, null=False)
 
     slug = models.SlugField()#modified
     
@@ -22,9 +22,9 @@ class UserProfile(models.Model):
     picture = models.ImageField(upload_to='profile_images', blank=True)#modified
 
     #new method#
-    def save(self, *args, **kwargs):#
-        self.slug = slugify(self.displayname)#
-        super(UserProfile, self).save(*args, **kwargs)#
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.displayname)
+        super(UserProfile, self).save(*args, **kwargs)
 
     class Meta():
         verbose_name_plural = "Players"
