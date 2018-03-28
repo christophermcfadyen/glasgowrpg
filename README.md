@@ -2,7 +2,7 @@
 
 ### Description
 
-GlasgowRPG is a casual text-base RPG for the students of University of Glasgow. Our aim is to provide fun while allowing players to relate to the elements of university life in Glasgow.
+GlasgowRPG is a casual text-based RPG for the students of University of Glasgow. Our aim is to provide fun while allowing players to relate to the elements of university life in Glasgow.
 1. Everyone who visits the site can view the **Home**, **About**, **Help** page. 
 2. Users are required to register and login to **play** the game, view **userprofile** and **stats** page.
 3. Players can save the game anytime and continue later or start a new game.
