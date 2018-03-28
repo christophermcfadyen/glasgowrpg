@@ -11,6 +11,10 @@ from rpg.models import *
 from rpg.views import *
 import unittest
 from django.test import Client
+import Image
+
+
+
 class SimpleTest(TestCase):
 
     def setUp(self):
