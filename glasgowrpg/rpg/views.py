@@ -75,9 +75,15 @@ def register(request):
 
 @login_required
 def stats(request):
-    context_dict = {'boldmessage': "stats"}
-    print("TBA")
-    return render(request, 'rpg/stats.html', context=context_dict)
+    #Pass userprofile model to stats.
+    from rpg.models import UserProfile
+
+    data = UserProfile.objects.get(user_id=1)
+
+    stu = {"user_id": data}
+
+    return render(request, 'rpg/stats.html', stu)
+
 @login_required
 def userprofile(request):
     context_dict = {'boldmessage': "userprofile"}

@@ -1,6 +1,7 @@
 {% extends 'rpg/base.html' %}
 {% load staticfiles %}
 
+
 {% block title_block %}
     Game Statistics
 {% endblock %}
@@ -12,25 +13,30 @@
 	</h1>
 
     <div style = "margin-left: 40px;">
+        <div class = "pagecontent">
+		<p>
+		Display name: {{user_id.displayname}}
+		</p
+
 		<div class = "pagecontent">
 		<p>
-		Number of graduations: {{UserProfile.academic_score|stringformat:"i"}}
+		Number of graduations: {{user_id.no_grads}}
 		</p>
 
 		<p>
-		Times in Viper: {{UserProfile.no_viper}}
+		Times in Viper: {{user_id.no_viper}}
 		</p>
 
 		<p>
-		Drop outs: {{UserProfile.no_drop}}
+		Drop outs: {{user_id.no_drop}}
 		</P>
 
 		<p>
-		John Williamson homeworks completed: {{UserProfile.no_homework}}
+		John Williamson homeworks completed: {{user_id.no_homework}}
 		</P>
 
 		<p>
-		Pints of Tennent's: {{UserProfile.no_tennent}}
+		Pints of Tennent's: {{user_id.no_tennent}}
 		</P>
 
 		</div>
