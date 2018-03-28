@@ -88,13 +88,23 @@ class LoginPageTest(TestCase):
 
 class PlayPageTest(TestCase):
 
+    def setUp(self):
+        user = User.objects.create_user("testUsername", "test@gmail.com", "testPassword")
+        UserProfile.objects.create(user=user)
+
     def test_play_response_without_login(self):
         response = self.client.get(reverse('play'))
         self.assertEqual(response.status_code, 302)
         
     #login required
+
+    def test_play_response_logged_in(self):
+        self.client.login(username='testUsername', password='testPassword')
+        response = self.client.get(reverse('play'))
+        self.assertEqual(response.status_code, 200)
+        
     def test_play_template(self):
-        self.client.login(username='test', password='test')
+        self.client.login(username='testUsername', password='testPassword')
         response = self.client.get(reverse('play'))
         self.assertTemplateUsed(response, 'rpg/play.html')
 
@@ -111,25 +121,43 @@ class RegisterPageTest(TestCase):
 
 class StatsPageTest(TestCase):
 
+    def setUp(self):
+        user = User.objects.create_user("testUsername", "test@gmail.com", "testPassword")
+        UserProfile.objects.create(user=user)
+        
     def test_stats_response_without_login(self):
         response = self.client.get(reverse('stats'))
         self.assertEqual(response.status_code, 302)
         
     #login required
+    def test_stats_response_logged_in(self):
+        self.client.login(username='testUsername', password='testPassword')
+        response = self.client.get(reverse('stats'))
+        self.assertEqual(response.status_code, 200)
+        
     def test_stats_template(self):
-        self.client.login(username='test', password='test')
+        self.client.login(username='testUsername', password='testPassword')
         response = self.client.get(reverse('stats'))
         self.assertTemplateUsed(response, 'rpg/stats.html')
 
 class UserprofilePageTest(TestCase):
+
+    def setUp(self):
+        user = User.objects.create_user("testUsername", "test@gmail.com", "testPassword")
+        UserProfile.objects.create(user=user)
 
     def test_userprofile_response_without_login(self):
         response = self.client.get(reverse('userprofile'))
         self.assertEqual(response.status_code, 302)
         
     #login required
+    def test_userprofile_response_logged_in(self):
+        self.client.login(username='testUsername', password='testPassword')
+        response = self.client.get(reverse('userprofile'))
+        self.assertEqual(response.status_code, 200)
+        
     def test_userprofile_template(self):
-        self.client.login(username='test', password='test')
+        self.client.login(username='testUsername', password='testPassword')
         response = self.client.get(reverse('userprofile'))
         self.assertTemplateUsed(response, 'rpg/userprofile.html')
 
