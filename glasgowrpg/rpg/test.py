@@ -92,7 +92,7 @@ class PlayPageTest(TestCase):
         response = self.client.get(reverse('play'))
         self.assertEqual(response.status_code, 302)
         
-    @login required
+    #login required
     def test_play_template(self):
         self.client.login(username='test', password='test')
         response = self.client.get(reverse('play'))
@@ -115,7 +115,7 @@ class StatsPageTest(TestCase):
         response = self.client.get(reverse('stats'))
         self.assertEqual(response.status_code, 302)
         
-    @login required
+    #login required
     def test_stats_template(self):
         self.client.login(username='test', password='test')
         response = self.client.get(reverse('stats'))
@@ -127,7 +127,7 @@ class UserprofilePageTest(TestCase):
         response = self.client.get(reverse('userprofile'))
         self.assertEqual(response.status_code, 302)
         
-    @login required
+    #login required
     def test_userprofile_template(self):
         self.client.login(username='test', password='test')
         response = self.client.get(reverse('userprofile'))
