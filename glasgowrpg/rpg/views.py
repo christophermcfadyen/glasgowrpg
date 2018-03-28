@@ -80,7 +80,9 @@ def stats(request):
     #Pass userprofile model to stats.
     from rpg.models import UserProfile
 
-    data = UserProfile.objects.get(user_id=1)
+    #Get user id and send profile data.
+    current_user = request.user
+    data = UserProfile.objects.get(user_id=current_user.id)
 
     stu = {"user_id": data}
 
