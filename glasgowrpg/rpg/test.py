@@ -91,8 +91,10 @@ class PlayPageTest(TestCase):
     def test_play_response_without_login(self):
         response = self.client.get(reverse('play'))
         self.assertEqual(response.status_code, 302)
-
+        
+    @login required
     def test_play_template(self):
+        self.client.login(username='test', password='test')
         response = self.client.get(reverse('play'))
         self.assertTemplateUsed(response, 'rpg/play.html')
 
@@ -112,8 +114,10 @@ class StatsPageTest(TestCase):
     def test_stats_response_without_login(self):
         response = self.client.get(reverse('stats'))
         self.assertEqual(response.status_code, 302)
-
+        
+    @login required
     def test_stats_template(self):
+        self.client.login(username='test', password='test')
         response = self.client.get(reverse('stats'))
         self.assertTemplateUsed(response, 'rpg/stats.html')
 
@@ -122,8 +126,10 @@ class UserprofilePageTest(TestCase):
     def test_userprofile_response_without_login(self):
         response = self.client.get(reverse('userprofile'))
         self.assertEqual(response.status_code, 302)
-
+        
+    @login required
     def test_userprofile_template(self):
+        self.client.login(username='test', password='test')
         response = self.client.get(reverse('userprofile'))
         self.assertTemplateUsed(response, 'rpg/userprofile.html')
 
