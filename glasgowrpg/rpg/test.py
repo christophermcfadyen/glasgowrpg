@@ -11,7 +11,7 @@ from rpg.models import *
 from rpg.views import *
 import unittest
 from django.test import Client
-import Image
+from PIL import Image
 
 
 
