@@ -1,4 +1,8 @@
-import os
+import os,sys
+import django
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowRPG.settings')
+django.setup()
 
 def populate():
     add_user(username="Chris",email="2030808m@student.gla.ac.uk",password="test")
@@ -21,6 +25,5 @@ def add_userprofile(picture, displayname,academic_score,social_score,no_grads,no
 
 if __name__ == '__main__':
     print ("Starting rpg population script...")
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowRPG.settings')
     from rpg.models import User, UserProfile
     populate()

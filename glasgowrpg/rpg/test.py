@@ -1,3 +1,9 @@
+import os
+import django
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowRPG.settings')
+django.setup()
+
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth import views as auth_views
@@ -5,7 +11,6 @@ from rpg.models import *
 from rpg.views import *
 import unittest
 from django.test import Client
-
 class SimpleTest(TestCase):
 
     def setUp(self):
